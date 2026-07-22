@@ -1,0 +1,305 @@
+:root {
+  color-scheme: dark;
+  --void: #060908;
+  --bg: #0a0e0c;
+  --panel: #111916;
+  --panel-inner: #0d1210;
+  --border: #2a3d32;
+  --border-glow: #3d5a45;
+  --text: #e8dcc4;
+  --text-dim: #a89578;
+  --muted: #6f7f72;
+  --gold: #c9a227;
+  --gold-dim: #8a7020;
+  --gold-glow: rgba(201, 162, 39, 0.25);
+  --green: #4a6b52;
+  --green-bright: #6b9478;
+  --blood: #8b2635;
+  --blood-glow: rgba(139, 38, 53, 0.2);
+  --sanity: #5c8a72;
+  --warn: #b8860b;
+  --font-display: "Cinzel", "Palatino Linotype", serif;
+  --font-body: "Crimson Pro", "Georgia", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  background: var(--void);
+  color: var(--text);
+  line-height: 1.45;
+  min-height: 100dvh;
+  position: relative;
+}
+
+.atmosphere {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -10%, rgba(74, 107, 82, 0.18), transparent 55%),
+    radial-gradient(ellipse 90% 60% at 50% 110%, rgba(10, 14, 12, 0.95), transparent 60%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
+}
+
+header,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.brand {
+  padding: 1.75rem 1rem 0.75rem;
+  text-align: center;
+}
+
+.brand-mark {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0 auto 0.75rem;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dim) 100%);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  opacity: 0.85;
+  box-shadow: 0 0 24px var(--gold-glow);
+}
+
+.brand-mark::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  background: radial-gradient(circle at center, transparent 35%, var(--bg) 36%);
+}
+
+.brand-eyebrow {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--green-bright);
+}
+
+.brand h1 {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.tagline {
+  margin: 0.5rem auto 0;
+  max-width: 22rem;
+  color: var(--text-dim);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.brand-rule {
+  width: min(12rem, 60%);
+  height: 1px;
+  margin: 1.1rem auto 0;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+main {
+  padding: 0 1rem 2rem;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.panel {
+  background:
+    linear-gradient(180deg, rgba(74, 107, 82, 0.06) 0%, transparent 40%),
+    var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 1.15rem;
+  margin-top: 1rem;
+  box-shadow:
+    inset 0 1px 0 rgba(201, 162, 39, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+.panel::before {
+  content: "";
+  display: block;
+  height: 2px;
+  margin: -1.15rem -1.15rem 1rem;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+  opacity: 0.6;
+}
+
+.hidden {
+  display: none !important;
+}
+
+h2,
+h3 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.panel-lede,
+p.subtitle {
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.hint {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.hint strong {
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+button {
+  font: inherit;
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  transition: background 0.15s, box-shadow 0.15s, color 0.15s;
+}
+
+.primary {
+  padding: 0.9rem 1rem;
+  background: linear-gradient(180deg, var(--green) 0%, #354a3c 100%);
+  color: var(--text);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  border: 1px solid var(--border-glow);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.primary:hover:not(:disabled) {
+  background: linear-gradient(180deg, var(--green-bright) 0%, var(--green) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 4px 20px rgba(74, 107, 82, 0.25);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.primary:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.ghost {
+  background: transparent;
+  color: var(--text-dim);
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--border);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.ghost:hover:not(:disabled) {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+}
+
+.ghost:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.action-row,
+.btn-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-row .primary {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 1.25rem 1rem 1.75rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.footer-note {
+  margin: 0 0 0.35rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.tool-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.tool-card:hover {
+  border-color: var(--gold-dim);
+  box-shadow:
+    inset 0 1px 0 rgba(201, 162, 39, 0.12),
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    0 0 20px var(--gold-glow);
+}
+
+.tool-card h2 {
+  margin-bottom: 0.35rem;
+}
+
+.tool-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.tool-card .tool-arrow {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-bright);
+}
+
+.tool-card:hover .tool-arrow {
+  color: var(--gold);
+}

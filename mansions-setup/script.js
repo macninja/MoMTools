@@ -9,6 +9,7 @@ function showStep(idx) {
     el.classList.toggle('active', i === idx);
   });
   updateProgress();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function updateProgress() {
