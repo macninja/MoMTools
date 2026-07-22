@@ -247,7 +247,8 @@ button {
   flex-wrap: wrap;
 }
 
-.action-row .primary {
+.action-row .primary,
+.btn-row .primary {
   flex: 1;
 }
 
