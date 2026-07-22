@@ -1,5 +1,4 @@
 import { PAGES } from "./strings.js";
-import { initAnalytics, trackEvent } from "./analytics.js";
 
 const STORAGE_KEY = "mom-lang";
 const DEFAULT_LANG = "da";
@@ -57,7 +56,6 @@ function setLang(next) {
   if (next !== "da" && next !== "en") return;
   lang = next;
   localStorage.setItem(STORAGE_KEY, lang);
-  trackEvent("Language", { lang: next });
   apply();
 }
 
@@ -89,7 +87,6 @@ export function onLangChange(fn) {
 export function initI18n(pageId) {
   page = pageId;
   lang = localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
-  initAnalytics();
   mountLangSwitcher();
   apply();
 }
