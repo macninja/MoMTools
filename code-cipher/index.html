@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0e0c">
+  <meta name="description" content="Deduce Mansions of Madness code puzzles before the hour grows late.">
+  <title>Code Cipher — Mansions of Madness</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="brand">
+    <div class="brand-mark" aria-hidden="true"></div>
+    <p class="brand-eyebrow">Mansions of Madness</p>
+    <h1>Code Cipher</h1>
+    <p class="tagline">Unravel the sealed combination. Return to the investigation.</p>
+    <div class="brand-rule" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section id="setup" class="panel">
+      <h2>Investigation Setup</h2>
+      <p class="panel-lede">Match the puzzle shown in the companion app.</p>
+      <label>
+        Code length
+        <select id="length">
+          <option value="3">3</option>
+          <option value="4" selected>4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </label>
+      <label>
+        Symbols (variance)
+        <select id="variance">
+          <option value="4">4</option>
+          <option value="5" selected>5</option>
+          <option value="6">6</option>
+        </select>
+      </label>
+      <label>
+        Symbol style
+        <select id="style">
+          <option value="numbers" selected>Numbers (1–6)</option>
+          <option value="runes">Arcane runes</option>
+        </select>
+      </label>
+      <button type="button" id="start-btn" class="primary">Open the cipher</button>
+    </section>
+
+    <section id="solver" class="panel hidden">
+      <div class="solver-header">
+        <h2>Deduction</h2>
+        <button type="button" id="reset-btn" class="ghost">Abandon case</button>
+      </div>
+
+      <p class="hint">
+        <strong>Elder Sign</strong> — correct symbol, correct position.
+        <strong>Investigation</strong> — correct symbol, wrong position.
+      </p>
+
+      <section id="suggestion" class="suggestion hidden">
+        <h3>Whispered counsel</h3>
+        <p id="suggestion-detail" class="hint"></p>
+        <div id="suggestion-guess" class="slots compact"></div>
+        <button type="button" id="use-suggestion-btn" class="ghost">Accept counsel</button>
+      </section>
+
+      <div id="guess-slots" class="slots"></div>
+
+      <div class="feedback-row">
+        <label>
+          <span class="feedback-label exact" title="Elder sign">⛤</span>
+          <span class="feedback-name">Elder Sign</span>
+          <div class="stepper">
+            <button type="button" data-target="exact" data-delta="-1" aria-label="Decrease elder signs">−</button>
+            <output id="exact">0</output>
+            <button type="button" data-target="exact" data-delta="1" aria-label="Increase elder signs">+</button>
+          </div>
+        </label>
+        <label>
+          <span class="feedback-label wrong" title="Investigation">🔍</span>
+          <span class="feedback-name">Investigation</span>
+          <div class="stepper">
+            <button type="button" data-target="wrong" data-delta="-1" aria-label="Decrease investigations">−</button>
+            <output id="wrong">0</output>
+            <button type="button" data-target="wrong" data-delta="1" aria-label="Increase investigations">+</button>
+          </div>
+        </label>
+      </div>
+
+      <div class="action-row">
+        <button type="button" id="add-guess-btn" class="primary">Record attempt</button>
+        <button type="button" id="undo-btn" class="ghost" disabled>Undo last</button>
+      </div>
+
+      <section id="history-section">
+        <h3>Prior attempts</h3>
+        <ul id="history"></ul>
+      </section>
+
+      <section id="results" class="results">
+        <p id="status">Enter your first guess from the app.</p>
+        <ul id="solutions"></ul>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-note">Fan tool · Not affiliated with Fantasy Flight Games</p>
+    <span id="version"></span>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

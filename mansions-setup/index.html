@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mansions of Madness 2E – Setup Wizard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wizard">
+
+  <!-- Progress -->
+  <div class="progress-bar">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <!-- STEP 0: Welcome -->
+  <div class="step active" id="step-welcome">
+    <h1>Mansions of Madness</h1>
+    <h2>Setup Wizard</h2>
+    <p class="subtitle">Kom hurtigt i gang uden at bladre i regelbogen. Denne guide hjælper jer med fysisk setup og genopfrisker de vigtigste regler.</p>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="next()">Start setup &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STEP 1: Players -->
+  <div class="step" id="step-players">
+    <h2>Antal spillere</h2>
+    <p class="subtitle">Hvor mange sidder ved bordet i aften?</p>
+    <div class="player-grid">
+      <button class="player-btn" data-n="1" onclick="selectPlayers(1)">1</button>
+      <button class="player-btn" data-n="2" onclick="selectPlayers(2)">2</button>
+      <button class="player-btn" data-n="3" onclick="selectPlayers(3)">3</button>
+      <button class="player-btn" data-n="4" onclick="selectPlayers(4)">4</button>
+      <button class="player-btn" data-n="5" onclick="selectPlayers(5)">5</button>
+    </div>
+    <div id="player-info"></div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="prev()">&#8592; Tilbage</button>
+      <button class="btn btn-primary" id="next-from-players" onclick="next()" disabled>Videre &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: Physical Setup -->
+  <div class="step" id="step-setup">
+    <h2>Fysisk setup</h2>
+    <p class="subtitle">Klik på hvert punkt når det er klart. <strong id="checklist-counter">0 / 8</strong></p>
+    <ul class="checklist" id="setup-checklist">
+      <li onclick="toggleCheck(this)"><span class="check"></span><span class="label">Find alle map tiles og sorter dem efter nummer</span></li>
+      <li onclick="toggleCheck(this)"><span class="check"></span><span class="label">Shuffle Damage- og Horror-dækkene hver for sig, læg facedown centralt</span></li>
+      <li onclick="toggleCheck(this)"><span class="check"></span><span class="label">Sortér Common Items, Unique Items, Spells og Conditions alfabetisk faceup (shuffle dem IKKE)</span></li>
+      <li onclick="toggleCheck(this)"><span class="check"></span><span class="label">Læg alle monster-figurer (med tokens i basen) tilgængeligt</span></li>
+      <li onclick="toggleCheck(this)"><span class="check"></span><span class="label">Saml alle andre tokens i pools: Clue, Fire, Darkness, Barricade, Wall, Secret Passage, Explore/Search/Interact, Person, Sight</span></li>
+      <li onclick="toggleCheck(this)"><span class="check"></span><span class="label">Find terningerne (custom d8 med 8 sider: 3 Elder Sign, 2 Investigation, 3 Blank)</span></li>
+      <li onclick="toggleCheck(this)"><span class="check"></span><span class="label">Hver spiller: Vælg investigator-kort og tag matchende figur</span></li>
+    </ul>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="prev()">&#8592; Tilbage</button>
+      <button class="btn btn-primary" onclick="next()">Videre &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: App -->
+  <div class="step" id="step-app">
+    <h2>Start companion-appen</h2>
+    <p class="subtitle">Nu er I klar til at åbne appen.</p>
+    <ul class="checklist" id="app-checklist">
+      <li onclick="toggleCheck(this)"><span class="check"></span><span class="label">Tjek Collection Manager i appen (More → My Collection): aktiver alle produkter/udvidelser I ejer</span></li>
+      <li onclick="toggleCheck(this)"><span class="check"></span><span class="label">Vælg "New Game", vælg scenarie</span></li>
+      <li onclick="toggleCheck(this)"><span class="check"></span><span class="label">Vælg jeres investigators i appen (skal matche de fysiske kort)</span></li>
+      <li onclick="toggleCheck(this)"><span class="check"></span><span class="label">Modtag Starting Possessions fra appen og fordel blandt investigators</span></li>
+      <li onclick="toggleCheck(this)"><span class="check"></span><span class="label">Læs prologen højt, placer start-tiles og tokens som appen viser</span></li>
+    </ul>
+    <div class="investigator-note">
+      Tip: Brug en tablet fremfor telefon – kortene er lettere at læse, og gåderne er nemmere at interagere med.
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="prev()">&#8592; Tilbage</button>
+      <button class="btn btn-primary" onclick="next()">Vis regler-reference &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: Quick Rules -->
+  <div class="step" id="step-rules">
+    <h2>Hurtig regelreference</h2>
+    <p class="subtitle">Klap sektionerne ud efter behov under spillet.</p>
+
+    <div class="rules-section">
+      <div class="rules-header" onclick="toggleRule(this)">
+        <span>Runde-struktur</span><span class="arrow">&#9660;</span>
+      </div>
+      <div class="rules-content">
+        <p>Hver runde har <strong>2 faser</strong>:</p>
+        <ul>
+          <li><strong>Investigator Phase</strong> – Investigators tager tur i valgfri rækkefølge (2 actions hver)</li>
+          <li><strong>Mythos Phase</strong> (3 steps i rækkefølge):
+            <ul>
+              <li>1. Event Step – appen genererer narrative events</li>
+              <li>2. Monster Step – hvert monster aktiveres (bevægelse + angreb)</li>
+              <li>3. Horror Step – hver investigator resolver horror check mod monster inden for range</li>
+            </ul>
+          </li>
+        </ul>
+        <p>Tryk "End Phase" i appen efter alle investigators er færdige / efter Mythos er resolved.</p>
+      </div>
+    </div>
+
+    <div class="rules-section">
+      <div class="rules-header" onclick="toggleRule(this)">
+        <span>Investigator-handlinger (2 pr. runde)</span><span class="arrow">&#9660;</span>
+      </div>
+      <div class="rules-content">
+        <p>Hver investigator har <strong>2 actions</strong> pr. tur (Investigation Phase):</p>
+        <ul>
+          <li><strong>Move</strong> – Flyt op til 2 spaces (space = afgrænset område, ikke rum). Kan afbrydes af anden action og genoptages.</li>
+          <li><strong>Explore</strong> – Vælg et Explore-token i appen (kræver du er i samme space eller adjacent til døren med tokenet)</li>
+          <li><strong>Search</strong> – Vælg et Search-token i appen (kræver du er i samme space som tokenet)</li>
+          <li><strong>Interact</strong> – Brug en Person/Interact-token i dit space (via appen)</li>
+          <li><strong>Trade</strong> – Giv/modtag/drop items med investigators i samme space. Koster 1 action, men de andre deltager gratis.</li>
+          <li><strong>Component Action</strong> – Brug en "Action"-evne på et kort du ejer (Items, Spells, Conditions)</li>
+          <li><strong>Attack</strong> – Angrib et monster i dit space (melee) eller inden for range (ranged)</li>
+          <li><strong>Push</strong> – Skub et monster eller en investigator 1 space (Strength-test)</li>
+          <li><strong>Set Fire</strong> – Placer Fire i dit space eller adjacent (kræver Light Source)</li>
+        </ul>
+        <p>Du kan bruge den samme action to gange (f.eks. Move + Move = 4 spaces).</p>
+      </div>
+    </div>
+
+    <div class="rules-section">
+      <div class="rules-header" onclick="toggleRule(this)">
+        <span>Skill checks (terninger)</span><span class="arrow">&#9660;</span>
+      </div>
+      <div class="rules-content">
+        <p>Terningerne har <strong>8 sider</strong>:</p>
+        <ul>
+          <li><strong>Elder Sign</strong> (stjerne) = Success (3 sider)</li>
+          <li><strong>Investigation result</strong> (forstørrelsesglas) = IKKE en success, men kan konverteres (2 sider)</li>
+          <li><strong>Blank</strong> = ingen effekt (3 sider)</li>
+        </ul>
+        <p><strong>Test-flow:</strong></p>
+        <ul>
+          <li>1. Bestem dice pool = skill-værdi +/- modifiers</li>
+          <li>2. Rul terningerne</li>
+          <li>3. Brug rerolls/konverteringer (fra effects, items)</li>
+          <li>4. Brug Clues: discard 1 Clue = konverter 1 Investigation result til 1 Success</li>
+          <li>5. Tæl Elder Signs = dit test result. Sammenlign med test difficulty (hvis angivet)</li>
+        </ul>
+        <p><strong>Vigtigt:</strong> Investigation results tæller IKKE som successes medmindre de konverteres med Clues.</p>
+      </div>
+    </div>
+
+    <div class="rules-section">
+      <div class="rules-header" onclick="toggleRule(this)">
+        <span>Combat (angreb og forsvar)</span><span class="arrow">&#9660;</span>
+      </div>
+      <div class="rules-content">
+        <ul>
+          <li><strong>Attack Action:</strong> Vælg weapon (melee/ranged icon) eller unarmed. Vælg monster fra Monster Drawer i appen. Tryk Attack, rul terninger, indrapporter successes.</li>
+          <li><strong>Melee:</strong> Monster skal være i dit space</li>
+          <li><strong>Ranged:</strong> Monster kan være inden for range (op til 3 spaces, ikke gennem vægge)</li>
+          <li><strong>Monster damage:</strong> Track i appen med +/- knapper. Når damage = health → monsteret dør automatisk.</li>
+          <li><strong>Wounded:</strong> Damage (faceup + facedown) >= Health → du bliver Wounded (Condition), discard al facedown Damage.</li>
+          <li><strong>Insane:</strong> Horror (faceup + facedown) >= Sanity → du bliver Insane (Condition), discard al facedown Horror. Du får et hemmeligt personligt mål.</li>
+          <li><strong>Eliminated:</strong> Wounded + mere Damage >= Health, eller Insane + mere Horror >= Sanity → investigator elimineret, drop items, fjern figur.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-section">
+      <div class="rules-header" onclick="toggleRule(this)">
+        <span>Evade (undvigelse)</span><span class="arrow">&#9660;</span>
+      </div>
+      <div class="rules-content">
+        <p><strong>Hvornår:</strong> Du SKAL evade hvis du frivilligt forsøger at forlade et monsters space, eller udfører en anden action end Attack/Move i et monsters space.</p>
+        <ul>
+          <li><strong>Hvilket monster:</strong> Kun det med den højeste awareness (grøn værdi, øverst til højre på token). Ved lighed vælger du.</li>
+          <li><strong>Hvordan:</strong> Vælg monsteret i Monster Drawer, tryk Evade. Appen bestemmer effekten.</li>
+          <li><strong>Fail:</strong> Du forfeiter din action (kan ikke bevæge dig / kan ikke udføre handlingen).</li>
+          <li><strong>Ufrivillig bevægelse:</strong> "move 2 spaces away" (appen tvinger) kræver IKKE evade.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-section">
+      <div class="rules-header" onclick="toggleRule(this)">
+        <span>Gåder (puzzles)</span><span class="arrow">&#9660;</span>
+      </div>
+      <div class="rules-content">
+        <p>Tre typer: <strong>Slide</strong> (samle billede), <strong>Lock</strong> (flyt brikker, befri goal piece), <strong>Code</strong> (gæt kombination).</p>
+        <ul>
+          <li><strong>Puzzle steps:</strong> Du har et antal træk = din relevante skill-værdi (vist af appen).</li>
+          <li><strong>Clues:</strong> Discard 1 Clue = 1 ekstra puzzle step. Ingen begrænsning.</li>
+          <li><strong>Lukke:</strong> Tryk "Close" for at afslutte. Progress gemmes – du kan prøve igen næste tur.</li>
+          <li><strong>Darkness:</strong> Kan du IKKE bruge Clues til ekstra puzzle steps i spaces med Darkness.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rules-section">
+      <div class="rules-header" onclick="toggleRule(this)">
+        <span>Vigtige ting man glemmer</span><span class="arrow">&#9660;</span>
+      </div>
+      <div class="rules-content">
+        <ul>
+          <li><strong>Darkness:</strong> Du kan IKKE bruge Clues til at konvertere Investigation results eller til ekstra puzzle steps i et space med Darkness. Ignoreres hvis space eller spiller har Light Source, eller space har Fire (eller adjacent space har det).</li>
+          <li><strong>Barricades:</strong> Blokerer bevægelse gennem dør/Secret Passage. Fjern med action: Strength-test, 2+ successes krævet.</li>
+          <li><strong>Fire:</strong> Tag 1 facedown Damage når du BEVÆGER dig ind i et space med Fire. Tag yderligere 1 facedown Damage når du udfører action (udover Move) i et Fire-space. Spreder sig i starten af hver Mythos Phase. <strong>Extinguish:</strong> Brug en action, test Agility – for hver success, fjern Fire fra dit space eller et space du bevæger dig til senere i runden.</li>
+          <li><strong>Secret Passages:</strong> Spaces med Secret Passage er adjacent til hinanden. Range tælles IKKE gennem dem.</li>
+          <li><strong>Spells:</strong> Double-sided. Du kan IKKE kigge på bagsiden medmindre en effekt flipper kortet. Flip = resolve bagsidens effekt (ofte negativt) og modtag en ny kopi.</li>
+          <li><strong>Horror Check (Mythos):</strong> Resolve mod det monster inden for range med den HØJESTE horror rating (blå, nederst til højre på token-forsiden).</li>
+          <li><strong>Health/Sanity er faste værdier</strong> – tæl dine facedown Damage/Horror-kort for at se hvor tæt du er.</li>
+          <li><strong>Range:</strong> Op til 3 spaces. Tælles IKKE gennem vægge eller lukkede døre, men KAN tælles gennem impassable borders.</li>
+          <li><strong>Wounded:</strong> Når total Damage (faceup + facedown) >= Health → du bliver Wounded (Condition), al facedown Damage discards. Næste gang det sker igen → elimineret.</li>
+          <li><strong>Insane:</strong> Når total Horror (faceup + facedown) >= Sanity → du bliver Insane (Condition), al facedown Horror discards. Du får et hemmeligt personligt mål (bagsiden af kortet). Næste gang det sker igen → elimineret.</li>
+          <li><strong>Save and Quit:</strong> Via in-game menu. Notér positions for figurer og possessions (appen husker board/tokens).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="prev()">&#8592; Tilbage</button>
+      <button class="btn btn-primary" onclick="resetWizard()">&#8634; Start forfra</button>
+    </div>
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "momtools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npm test --prefix code-cipher"
+  }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoMTools — Mansions of Madness 2E</title>
+  <style>
+    :root {
+      --bg: #1a1a2e;
+      --bg-card: #16213e;
+      --bg-hover: #0f3460;
+      --accent: #e94560;
+      --text: #eaeaea;
+      --text-dim: #a0a0b0;
+      --border: #2a2a4a;
+      --radius: 12px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100dvh;
+      padding: 2rem 1rem;
+      line-height: 1.5;
+    }
+    main {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.6rem;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+    .subtitle {
+      color: var(--text-dim);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    .tools {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tool-card {
+      display: block;
+      padding: 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .tool-card:hover {
+      border-color: var(--accent);
+      background: var(--bg-hover);
+    }
+    .tool-card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.35rem;
+    }
+    .tool-card p {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>MoMTools</h1>
+    <p class="subtitle">Hjælpeværktøjer til Mansions of Madness 2E</p>
+
+    <div class="tools">
+      <a class="tool-card" href="mansions-setup/index.html">
+        <h2>Setup Wizard</h2>
+        <p>Fysisk setup, companion-app og hurtig regelreference — kom i gang på få minutter.</p>
+      </a>
+      <a class="tool-card" href="code-cipher/index.html">
+        <h2>Code Cipher</h2>
+        <p>Løs Code-gåder i appen — indtast gæt og feedback, indtil kombinationen er fundet.</p>
+      </a>
+    </div>
+
+    <footer>Fan tools · Ikke tilknyttet Fantasy Flight Games</footer>
+  </main>
+</body>
+</html>
