@@ -57,6 +57,20 @@ npx serve .       # serve repo root locally
 
 Tests live in `code-cipher/solver.test.js` (unit) and `code-cipher/integration.test.js` (full solve simulation).
 
+## Analytics (Plausible)
+
+Privacy-friendly pageview stats via [Plausible](https://plausible.io). Loaded from [`shared/analytics.js`](shared/analytics.js) on every page.
+
+**Setup:**
+
+1. Create a free trial at [plausible.io](https://plausible.io)
+2. Add site **`macninja.github.io`** (GitHub Pages hostname)
+3. Deploy — pageviews appear under paths like `/MoMTools/`, `/MoMTools/mansions-setup/`, etc.
+
+Language switches are tracked as a custom **Language** event. For BGG links, add UTM params:
+
+`https://macninja.github.io/MoMTools/?utm_source=bgg&utm_medium=link`
+
 ## Project layout
 
 ```
