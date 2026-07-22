@@ -1,8 +1,9 @@
 {
   "name": "momtools",
+  "version": "1.1.1",
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "npm test --prefix code-cipher"
+    "test": "node code-cipher/solver.test.js && node code-cipher/integration.test.js"
   }
 }

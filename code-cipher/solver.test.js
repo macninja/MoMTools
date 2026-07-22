@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { score, validateFeedback, enumerateCodes, filterCandidates, solve, suggestNextGuess } from "./solver.js";
-import pkg from "./package.json" with { type: "json" };
+import pkg from "../package.json" with { type: "json" };
 
 assert.match(pkg.version, /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/);
 

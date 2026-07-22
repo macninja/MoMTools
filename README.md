@@ -24,7 +24,7 @@ Rules content is verified against the official Rules Reference (2nd Edition). Ch
 
 Table-side helper for **Code Puzzles** in the companion app. Enter guesses and app feedback; the tool eliminates impossible codes until one remains.
 
-**Version:** 1.1.1 (shown in app footer, source of truth: `code-cipher/package.json`)
+**Version:** 1.1.1 (shown in Code Cipher footer, source of truth: root `package.json`)
 
 ### Use at the table
 

@@ -269,7 +269,7 @@ els.addGuessBtn.addEventListener("click", () => {
 
 if (loadState()) showSolver();
 
-fetch("./package.json")
+fetch("../package.json")
   .then((r) => r.json())
   .then((pkg) => {
     const el = document.getElementById("version");

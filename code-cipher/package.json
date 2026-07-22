@@ -1,9 +1,0 @@
-{
-  "name": "code-cipher",
-  "version": "1.1.1",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "test": "node solver.test.js && node integration.test.js"
-  }
-}
