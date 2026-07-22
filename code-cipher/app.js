@@ -1,4 +1,7 @@
 import { solve, validateFeedback, suggestNextGuess } from "./solver.js";
+import { initI18n, t, onLangChange } from "../shared/i18n.js";
+
+initI18n("cipher");
 
 const STORAGE_KEY = "mom-code-solver";
 const RUNE_COLORS = ["#6b2c2c", "#2c4a5a", "#3d5a3a", "#7a5c20", "#6e7268", "#2a5a52"];
@@ -63,7 +66,7 @@ function renderGuessSlots() {
     btn.className = "tile";
     btn.style.background = symbolColor(sym);
     btn.textContent = symbolLabel(sym);
-    btn.title = `Slot ${idx + 1} — tap to cycle`;
+    btn.title = t("slotTitle", { n: idx + 1 });
     btn.addEventListener("click", () => {
       currentGuess[idx] = (currentGuess[idx] + 1) % symbols.length;
       renderGuessSlots();
@@ -122,7 +125,7 @@ function renderHistoryItem(entry, index) {
   li.innerHTML = `
     <div class="history-guess">${chipsHtml(entry.guess)}</div>
     <div class="history-feedback"><span class="fb-exact">⛤ ${entry.exact}</span> · <span class="fb-wrong">🔍 ${entry.wrongPosition}</span></div>
-    <button type="button" class="ghost small" data-remove="${index}">Remove</button>
+    <button type="button" class="ghost small" data-remove="${index}">${t("history.remove")}</button>
   `;
   li.querySelector("[data-remove]").addEventListener("click", () => {
     history.splice(index, 1);
@@ -150,7 +153,7 @@ function renderSolutions(remaining) {
   if (remaining.length > limit) {
     const li = document.createElement("li");
     li.className = "more";
-    li.textContent = `…and ${remaining.length - limit} more`;
+    li.textContent = t("history.more", { n: remaining.length - limit });
     els.solutions.appendChild(li);
   }
 }
@@ -164,7 +167,7 @@ function renderSuggestion(suggestion) {
   els.suggestion.classList.remove("hidden");
   els.suggestionDetail.textContent =
     suggestion.reason === "count"
-      ? `Fill all slots with ${symbolLabel(suggestion.guess[0])} to count how many appear in the code.`
+      ? t("suggestion.count", { symbol: symbolLabel(suggestion.guess[0]) })
       : suggestion.detail;
   els.suggestionGuess.innerHTML = chipsHtml(suggestion.guess);
 }
@@ -172,22 +175,26 @@ function renderSuggestion(suggestion) {
 function renderStatus(remaining, total, error) {
   els.status.classList.remove("error", "success", "warn");
   if (error) {
-    els.status.textContent = error;
+    els.status.textContent = t(`error.${error}`);
     els.status.classList.add("error");
+    return;
+  }
+  if (history.length === 0) {
+    els.status.textContent = t("status.none");
     return;
   }
   const n = remaining.length;
   if (n === 0) {
-    els.status.textContent = "No codes match — check length, symbols, or guess history.";
+    els.status.textContent = t("status.noMatch");
     els.status.classList.add("error");
   } else if (n === 1) {
-    els.status.textContent = "Solved! Enter this code in the app:";
+    els.status.textContent = t("status.solved");
     els.status.classList.add("success");
   } else if (n <= 10) {
-    els.status.textContent = `${n} possibilities remain (of ${total}):`;
+    els.status.textContent = t("status.warn", { n, total });
     els.status.classList.add("warn");
   } else {
-    els.status.textContent = `${n} possibilities remain (of ${total}). Keep guessing.`;
+    els.status.textContent = t("status.keep", { n, total });
   }
 }
 
@@ -265,6 +272,13 @@ els.addGuessBtn.addEventListener("click", () => {
   history.push({ guess: [...currentGuess], exact, wrongPosition });
   setFeedback(0, 0);
   refresh();
+});
+
+onLangChange(() => {
+  if (!els.solver.classList.contains("hidden")) {
+    renderGuessSlots();
+    refresh();
+  }
 });
 
 if (loadState()) showSolver();

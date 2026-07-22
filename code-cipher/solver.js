@@ -28,10 +28,8 @@ export function score(secret, guess) {
 }
 
 export function validateFeedback(length, exact, wrongPosition) {
-  if (exact < 0 || wrongPosition < 0) return "Counts cannot be negative.";
-  if (exact + wrongPosition > length) {
-    return "Elder signs + magnifying glasses cannot exceed code length.";
-  }
+  if (exact < 0 || wrongPosition < 0) return "negative";
+  if (exact + wrongPosition > length) return "exceeds_length";
   return null;
 }
 

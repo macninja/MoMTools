@@ -46,7 +46,7 @@ Table-side helper for **Code Puzzles** in the companion app. Enter guesses and a
 
 ## Styling
 
-All pages share one stylesheet: [`shared/mom.css`](shared/mom.css). Change colors, fonts, buttons, and panels there — hub, setup wizard, and Code Cipher all follow.
+All pages share one stylesheet: [`shared/mom.css`](shared/mom.css). Translations live in [`shared/strings*.js`](shared/) with [`shared/i18n.js`](shared/i18n.js). Danish is the default language; use the 🇩🇰 / 🇬🇧 switcher in the top-right corner.
 
 ## Development
 

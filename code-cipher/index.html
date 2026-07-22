@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0a0e0c">
-  <meta name="description" content="Deduce Mansions of Madness code puzzles before the hour grows late.">
-  <title>Code Cipher — Mansions of Madness</title>
+  <meta name="description" data-i18n="meta.description" content="Knæk Mansions of Madness kodegåder, før natten bliver for lang.">
+  <title data-i18n="meta.title">Code Cipher — Mansions of Madness</title>
   <link rel="icon" href="../shared/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../shared/mom.css?v=6">
+  <link rel="stylesheet" href="../shared/mom.css?v=7">
 </head>
 <body>
   <div class="atmosphere" aria-hidden="true"></div>
 
   <nav class="hub-nav">
-    <a class="hub-back" href="../index.html">&#8592; MoMTools</a>
+    <a class="hub-back" href="../index.html" data-i18n="hubBack">&#8592; MoMTools</a>
   </nav>
 
   <header class="brand">
     <div class="brand-mark" aria-hidden="true"></div>
     <p class="brand-eyebrow">Mansions of Madness</p>
     <h1>Code Cipher</h1>
-    <p class="tagline">Unravel the sealed combination. Return to the investigation.</p>
+    <p class="tagline" data-i18n="tagline">Løs den forseglede kombination. Vend tilbage til efterforskningen.</p>
     <div class="brand-rule" aria-hidden="true"></div>
   </header>
 
   <main>
     <section id="setup" class="panel">
-      <h2>Investigation Setup</h2>
-      <p class="panel-lede">Match the puzzle shown in the companion app.</p>
+      <h2 data-i18n="setup.title">Efterforskning — opsætning</h2>
+      <p class="panel-lede" data-i18n="setup.lede">Match gåden vist i companion-appen.</p>
       <label>
-        Code length
+        <span data-i18n="setup.length">Kodelængde</span>
         <select id="length">
           <option value="3">3</option>
           <option value="4" selected>4</option>
@@ -41,7 +41,7 @@
         </select>
       </label>
       <label>
-        Symbols (variance)
+        <span data-i18n="setup.variance">Symboler (variation)</span>
         <select id="variance">
           <option value="4">4</option>
           <option value="5" selected>5</option>
@@ -49,75 +49,75 @@
         </select>
       </label>
       <label>
-        Symbol style
+        <span data-i18n="setup.style">Symbolstil</span>
         <select id="style">
-          <option value="numbers" selected>Numbers (1–6)</option>
-          <option value="runes">Arcane runes</option>
+          <option value="numbers" selected data-i18n="setup.styleNumbers">Tal (1–6)</option>
+          <option value="runes" data-i18n="setup.styleRunes">Arkane runer</option>
         </select>
       </label>
-      <button type="button" id="start-btn" class="primary">Open the cipher</button>
+      <button type="button" id="start-btn" class="primary" data-i18n="setup.start">Åbn cipher</button>
     </section>
 
     <section id="solver" class="panel hidden">
       <div class="solver-header">
-        <h2>Deduction</h2>
-        <button type="button" id="reset-btn" class="ghost">Abandon case</button>
+        <h2 data-i18n="solver.title">Deduktion</h2>
+        <button type="button" id="reset-btn" class="ghost" data-i18n="solver.abandon">Opgiv sag</button>
       </div>
 
-      <p class="hint">
-        <strong>Elder Sign</strong> — correct symbol, correct position.
-        <strong>Investigation</strong> — correct symbol, wrong position.
+      <p class="hint" data-i18n-html="solver.hint">
+        <strong>Elder Sign</strong> — korrekt symbol, korrekt position.
+        <strong>Investigation</strong> — korrekt symbol, forkert position.
       </p>
 
       <section id="suggestion" class="suggestion hidden">
-        <h3>Whispered counsel</h3>
+        <h3 data-i18n="suggestion.title">Hvisken fra rådet</h3>
         <p id="suggestion-detail" class="hint"></p>
         <div id="suggestion-guess" class="slots compact"></div>
-        <button type="button" id="use-suggestion-btn" class="ghost">Accept counsel</button>
+        <button type="button" id="use-suggestion-btn" class="ghost" data-i18n="suggestion.accept">Acceptér råd</button>
       </section>
 
       <div id="guess-slots" class="slots"></div>
 
       <div class="feedback-row">
         <label>
-          <span class="feedback-label exact" title="Elder sign">⛤</span>
-          <span class="feedback-name">Elder Sign</span>
+          <span class="feedback-label exact" data-i18n-title="feedback.elder">⛤</span>
+          <span class="feedback-name" data-i18n="feedback.elder">Elder Sign</span>
           <div class="stepper">
-            <button type="button" data-target="exact" data-delta="-1" aria-label="Decrease elder signs">−</button>
+            <button type="button" data-target="exact" data-delta="-1" data-i18n-aria="feedback.decreaseExact">−</button>
             <output id="exact">0</output>
-            <button type="button" data-target="exact" data-delta="1" aria-label="Increase elder signs">+</button>
+            <button type="button" data-target="exact" data-delta="1" data-i18n-aria="feedback.increaseExact">+</button>
           </div>
         </label>
         <label>
-          <span class="feedback-label wrong" title="Investigation">🔍</span>
-          <span class="feedback-name">Investigation</span>
+          <span class="feedback-label wrong" data-i18n-title="feedback.investigation">🔍</span>
+          <span class="feedback-name" data-i18n="feedback.investigation">Investigation</span>
           <div class="stepper">
-            <button type="button" data-target="wrong" data-delta="-1" aria-label="Decrease investigations">−</button>
+            <button type="button" data-target="wrong" data-delta="-1" data-i18n-aria="feedback.decreaseWrong">−</button>
             <output id="wrong">0</output>
-            <button type="button" data-target="wrong" data-delta="1" aria-label="Increase investigations">+</button>
+            <button type="button" data-target="wrong" data-delta="1" data-i18n-aria="feedback.increaseWrong">+</button>
           </div>
         </label>
       </div>
 
       <div class="action-row">
-        <button type="button" id="add-guess-btn" class="primary">Record attempt</button>
-        <button type="button" id="undo-btn" class="ghost" disabled>Undo last</button>
+        <button type="button" id="add-guess-btn" class="primary" data-i18n="action.record">Registrér forsøg</button>
+        <button type="button" id="undo-btn" class="ghost" disabled data-i18n="action.undo">Fortryd sidste</button>
       </div>
 
       <section id="history-section">
-        <h3>Prior attempts</h3>
+        <h3 data-i18n="history.title">Tidligere forsøg</h3>
         <ul id="history"></ul>
       </section>
 
       <section id="results" class="results">
-        <p id="status">Enter your first guess from the app.</p>
+        <p id="status" data-i18n="status.none">Indtast dit første gæt fra appen.</p>
         <ul id="solutions"></ul>
       </section>
     </section>
   </main>
 
   <footer>
-    <p class="footer-note">Fan tool · Not affiliated with Fantasy Flight Games</p>
+    <p class="footer-note" data-i18n="footer">Fan-værktøj · Ikke tilknyttet Fantasy Flight Games</p>
     <span id="version"></span>
   </footer>
 

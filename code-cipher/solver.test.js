@@ -17,7 +17,7 @@ eq(score([1, 1, 2, 2], [2, 2, 2, 2]), { exact: 2, wrongPosition: 0 });
 eq(score([1, 2, 2, 2], [2, 1, 2, 2]), { exact: 2, wrongPosition: 2 });
 
 assert.equal(validateFeedback(4, 2, 2), null);
-assert.match(validateFeedback(4, 3, 2), /cannot exceed/);
+assert.equal(validateFeedback(4, 3, 2), "exceeds_length");
 
 const universe = enumerateCodes(2, [0, 1]);
 assert.equal(universe.length, 4);
