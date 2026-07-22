@@ -115,7 +115,8 @@ export const SETUP_STRINGS = {
     "rules.gotchas.html": `<ul>
             <li><strong>Darkness:</strong> Du kan IKKE bruge Clues til at konvertere Investigation results eller til ekstra puzzle steps i et space med Darkness. Ignoreres hvis space eller spiller har Light Source, eller space har Fire (eller adjacent space har det).</li>
             <li><strong>Barricades:</strong> Blokerer bevægelse gennem dør/Secret Passage. Fjern med action: Strength-test, 2+ successes krævet.</li>
-            <li><strong>Fire:</strong> Tag 1 facedown Damage når du BEVÆGER dig ind i et space med Fire. Tag yderligere 1 facedown Damage når du udfører action (udover Move) i et Fire-space. Spreder sig i starten af hver Mythos Phase. <strong>Extinguish:</strong> Brug en action, test Agility – for hver success, fjern Fire fra dit space eller et space du bevæger dig til senere i runden.</li>
+            <li><strong>Fire:</strong> Tag 1 facedown Damage når du BEVÆGER dig ind i et space med Fire. Tag yderligere 1 facedown Damage når du udfører action (udover Move) i et Fire-space. Spreder sig i starten af hver Mythos Phase.</li>
+            <li><strong>Extinguish:</strong> Brug en action, test Agility – for hver success, fjern Fire fra dit space eller et space du bevæger dig til senere i runden.</li>
             <li><strong>Secret Passages:</strong> Spaces med Secret Passage er adjacent til hinanden. Range tælles IKKE gennem dem.</li>
             <li><strong>Spells:</strong> Double-sided. Du kan IKKE kigge på bagsiden medmindre en effekt flipper kortet. Flip = resolve bagsidens effekt (ofte negativt) og modtag en ny kopi.</li>
             <li><strong>Horror Check (Mythos):</strong> Resolve mod det monster inden for range med den HØJESTE horror rating (blå, nederst til højre på token-forsiden).</li>
@@ -242,7 +243,8 @@ export const SETUP_STRINGS = {
     "rules.gotchas.html": `<ul>
             <li><strong>Darkness:</strong> You CANNOT use Clues to convert Investigation results or for extra puzzle steps in a space with Darkness. Ignored if the space or player has a Light Source, or the space has Fire (or an adjacent space does).</li>
             <li><strong>Barricades:</strong> Block movement through a door/Secret Passage. Remove with an action: Strength test, 2+ successes required.</li>
-            <li><strong>Fire:</strong> Take 1 face-down Damage when you MOVE into a space with Fire. Take an additional 1 face-down Damage when you perform an action (other than Move) in a Fire space. Spreads at the start of each Mythos Phase. <strong>Extinguish:</strong> Use an action, test Agility – for each success, remove Fire from your space or a space you move to later in the round.</li>
+            <li><strong>Fire:</strong> Take 1 face-down Damage when you MOVE into a space with Fire. Take an additional 1 face-down Damage when you perform an action (other than Move) in a Fire space. Spreads at the start of each Mythos Phase.</li>
+            <li><strong>Extinguish:</strong> Use an action, test Agility – for each success, remove Fire from your space or a space you move to later in the round.</li>
             <li><strong>Secret Passages:</strong> Spaces with a Secret Passage are adjacent to each other. Range does NOT count through them.</li>
             <li><strong>Spells:</strong> Double-sided. You CANNOT look at the back unless an effect flips the card. Flip = resolve the back effect (often negative) and receive a new copy.</li>
             <li><strong>Horror Check (Mythos):</strong> Resolve against the monster within range with the HIGHEST horror rating (blue, bottom right on the front of the token).</li>
