@@ -1,43 +1,43 @@
 export const HUB_STRINGS = {
   da: {
-    "meta.title": "MoMTools — Mansions of Madness",
+    "meta.title": "MoMTools – Mansions of Madness",
     "meta.description": "Hjælpeværktøjer til Mansions of Madness Second Edition.",
-    tagline: "Hjælpeværktøjer til bordet — åbn det du har brug for.",
+    tagline: "Hjælpeværktøjer til bordet – åbn det du har brug for.",
     footer: "Fan tools · Ikke tilknyttet Fantasy Flight Games",
     "setupCard.title": "Setup Wizard",
     "setupCard.desc":
-      "Fysisk setup, companion-app og hurtig regelreference — kom i gang på få minutter.",
+      "Fysisk setup, companion-app og hurtig regelreference – kom i gang på få minutter.",
     "setupCard.arrow": "Åbn wizard →",
     "cipherCard.title": "Code Cipher",
     "cipherCard.desc":
-      "Løs Code-gåder i appen — indtast gæt og feedback, indtil kombinationen er fundet.",
+      "Løs Code-gåder i appen – indtast gæt og feedback, indtil kombinationen er fundet.",
     "cipherCard.arrow": "Åbn cipher →",
   },
   en: {
-    "meta.title": "MoMTools — Mansions of Madness",
+    "meta.title": "MoMTools – Mansions of Madness",
     "meta.description": "Helper tools for Mansions of Madness Second Edition.",
-    tagline: "Helper tools for the table — open what you need.",
+    tagline: "Helper tools for the table – open what you need.",
     footer: "Fan tools · Not affiliated with Fantasy Flight Games",
     "setupCard.title": "Setup Wizard",
     "setupCard.desc":
-      "Physical setup, companion app, and quick rule reference — get started in minutes.",
+      "Physical setup, companion app, and quick rule reference – get started in minutes.",
     "setupCard.arrow": "Open wizard →",
     "cipherCard.title": "Code Cipher",
     "cipherCard.desc":
-      "Solve Code puzzles in the app — enter guesses and feedback until the combination is found.",
+      "Solve Code puzzles in the app – enter guesses and feedback until the combination is found.",
     "cipherCard.arrow": "Open cipher →",
   },
 };
 
 export const CIPHER_STRINGS = {
   da: {
-    "meta.title": "Code Cipher — Mansions of Madness",
+    "meta.title": "Code Cipher – Mansions of Madness",
     "meta.description":
       "Knæk Mansions of Madness kodegåder, før natten bliver for lang.",
     hubBack: "← MoMTools",
     tagline: "Løs den forseglede kombination. Vend tilbage til efterforskningen.",
     footer: "Fan-værktøj · Ikke tilknyttet Fantasy Flight Games",
-    "setup.title": "Efterforskning — opsætning",
+    "setup.title": "Efterforskning – opsætning",
     "setup.lede": "Match gåden vist i companion-appen.",
     "setup.length": "Kodelængde",
     "setup.variance": "Symboler (variation)",
@@ -48,7 +48,7 @@ export const CIPHER_STRINGS = {
     "solver.title": "Deduktion",
     "solver.abandon": "Opgiv sag",
     "solver.hint":
-      "<strong>Elder Sign</strong> — korrekt symbol, korrekt position. <strong>Investigation</strong> — korrekt symbol, forkert position.",
+      "<strong>Elder Sign</strong> – korrekt symbol, korrekt position. <strong>Investigation</strong> – korrekt symbol, forkert position.",
     "suggestion.title": "Hvisken fra rådet",
     "suggestion.accept": "Acceptér råd",
     "suggestion.count":
@@ -62,11 +62,11 @@ export const CIPHER_STRINGS = {
     "action.record": "Registrér forsøg",
     "action.undo": "Fortryd sidste",
     "history.title": "Tidligere forsøg",
-    slotTitle: "Felt {n} — tryk for at skifte",
+    slotTitle: "Felt {n} – tryk for at skifte",
     "history.remove": "Fjern",
     "history.more": "…og {n} flere",
     "status.none": "Indtast dit første gæt fra appen.",
-    "status.noMatch": "Ingen koder matcher — tjek længde, symboler eller gættehistorik.",
+    "status.noMatch": "Ingen koder matcher – tjek længde, symboler eller gættehistorik.",
     "status.solved": "Løst! Indtast denne kode i appen:",
     "status.warn": "{n} muligheder tilbage (af {total}):",
     "status.keep": "{n} muligheder tilbage (af {total}). Bliv ved med at gætte.",
@@ -75,7 +75,7 @@ export const CIPHER_STRINGS = {
       "Elder signs og investigations kan ikke overstige kodelængden.",
   },
   en: {
-    "meta.title": "Code Cipher — Mansions of Madness",
+    "meta.title": "Code Cipher – Mansions of Madness",
     "meta.description":
       "Deduce Mansions of Madness code puzzles before the hour grows late.",
     hubBack: "← MoMTools",
@@ -92,7 +92,7 @@ export const CIPHER_STRINGS = {
     "solver.title": "Deduction",
     "solver.abandon": "Abandon case",
     "solver.hint":
-      "<strong>Elder Sign</strong> — correct symbol, correct position. <strong>Investigation</strong> — correct symbol, wrong position.",
+      "<strong>Elder Sign</strong> – correct symbol, correct position. <strong>Investigation</strong> – correct symbol, wrong position.",
     "suggestion.title": "Whispered counsel",
     "suggestion.accept": "Accept counsel",
     "suggestion.count":
@@ -106,11 +106,11 @@ export const CIPHER_STRINGS = {
     "action.record": "Record attempt",
     "action.undo": "Undo last",
     "history.title": "Prior attempts",
-    slotTitle: "Slot {n} — tap to cycle",
+    slotTitle: "Slot {n} – tap to cycle",
     "history.remove": "Remove",
     "history.more": "…and {n} more",
     "status.none": "Enter your first guess from the app.",
-    "status.noMatch": "No codes match — check length, symbols, or guess history.",
+    "status.noMatch": "No codes match – check length, symbols, or guess history.",
     "status.solved": "Solved! Enter this code in the app:",
     "status.warn": "{n} possibilities remain (of {total}):",
     "status.keep": "{n} possibilities remain (of {total}). Keep guessing.",

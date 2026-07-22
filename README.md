@@ -1,22 +1,22 @@
 # MoMTools
 
-Table-side helpers for **Mansions of Madness: Second Edition**. Open any tool in a browser — no build step required.
+Table-side helpers for **Mansions of Madness: Second Edition**. Open any tool in a browser – no build step required.
 
 ## Quick start
 
 Open [`index.html`](index.html), or jump straight to a tool:
 
-- [Setup Wizard](mansions-setup/index.html) — physical setup, app steps, rules reference (Danish)
-- [Code Cipher](code-cipher/index.html) — Mastermind-style solver for Code puzzles
+- [Setup Wizard](mansions-setup/index.html) – physical setup, app steps, rules reference (Danish)
+- [Code Cipher](code-cipher/index.html) – Mastermind-style solver for Code puzzles
 
 ## Setup Wizard
 
-Quick-start wizard to get from box to first round in minutes — without flipping through the rulebook.
+Quick-start wizard to get from box to first round in minutes – without flipping through the rulebook.
 
-1. **Player count** — select 1–5 players with tips per configuration
-2. **Physical setup checklist** — interactive checklist for cards, tokens, tiles, and dice
-3. **App setup** — companion app steps (Collection Manager, scenario, investigators, starting possessions)
-4. **Quick rules reference** — collapsible sections for rounds, actions, skill checks, combat, evade, puzzles, and common gotchas
+1. **Player count** – select 1–5 players with tips per configuration
+2. **Physical setup checklist** – interactive checklist for cards, tokens, tiles, and dice
+3. **App setup** – companion app steps (Collection Manager, scenario, investigators, starting possessions)
+4. **Quick rules reference** – collapsible sections for rounds, actions, skill checks, combat, evade, puzzles, and common gotchas
 
 Rules content is verified against the official Rules Reference (2nd Edition). Checklist state resets on "Start forfra".
 
@@ -40,9 +40,9 @@ Table-side helper for **Code Puzzles** in the companion app. Enter guesses and a
 
 ### Features
 
-- **Suggested next guess** — counting probes early, then greedy elimination
-- **Undo last** — revert the most recent guess
-- **Auto-save** — puzzle state persists in `localStorage` (survives refresh)
+- **Suggested next guess** – counting probes early, then greedy elimination
+- **Undo last** – revert the most recent guess
+- **Auto-save** – puzzle state persists in `localStorage` (survives refresh)
 
 ## Styling
 

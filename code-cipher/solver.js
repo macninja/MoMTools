@@ -108,7 +108,7 @@ export function suggestNextGuess(length, symbols, history, remaining) {
       best = {
         guess,
         reason: "eliminate",
-        detail: `Best split — at most ${worst} possibilities after this guess.`,
+        detail: `Best split – at most ${worst} possibilities after this guess.`,
       };
     }
   }

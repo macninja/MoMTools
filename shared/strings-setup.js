@@ -1,10 +1,10 @@
 export const SETUP_STRINGS = {
   da: {
-    "meta.title": "Setup Wizard — Mansions of Madness",
+    "meta.title": "Setup Wizard – Mansions of Madness",
     "meta.description": "Setup guide og regelreference til Mansions of Madness 2E.",
     hubBack: "← MoMTools",
     footer: "Fan tool · Ikke tilknyttet Fantasy Flight Games",
-    tagline: "Fra kassen til første runde — uden at bladre i regelbogen.",
+    tagline: "Fra kassen til første runde – uden at bladre i regelbogen.",
     "welcome.title": "Velkommen",
     "welcome.lede": "Denne guide hjælper jer med fysisk setup, companion-appen og genopfrisker de vigtigste regler under spillet.",
     "welcome.start": "Start setup →",
@@ -127,11 +127,11 @@ export const SETUP_STRINGS = {
           </ul>`,
   },
   en: {
-    "meta.title": "Setup Wizard — Mansions of Madness",
+    "meta.title": "Setup Wizard – Mansions of Madness",
     "meta.description": "Setup guide and rules reference for Mansions of Madness 2E.",
     hubBack: "← MoMTools",
     footer: "Fan tool · Not affiliated with Fantasy Flight Games",
-    tagline: "From the box to the first round — without flipping through the rulebook.",
+    tagline: "From the box to the first round – without flipping through the rulebook.",
     "welcome.title": "Welcome",
     "welcome.lede": "This guide helps you with physical setup, the companion app, and refreshes the most important rules during play.",
     "welcome.start": "Start setup →",
@@ -157,7 +157,7 @@ export const SETUP_STRINGS = {
     "setup.checklist.7": "Each player: Choose investigator cards and take matching figures",
     "app.title": "Launch the companion app",
     "app.lede": "You're ready to open the app.",
-    "app.tip": "Tip: Use a tablet rather than a phone — cards are easier to read and puzzles are easier to interact with.",
+    "app.tip": "Tip: Use a tablet rather than a phone – cards are easier to read and puzzles are easier to interact with.",
     "app.back": "← Back",
     "app.next": "Show rules reference →",
     "app.checklist.1": "Check Collection Manager in the app (More → My Collection): enable all products/expansions you own",
@@ -235,18 +235,18 @@ export const SETUP_STRINGS = {
           <ul>
             <li><strong>Puzzle steps:</strong> You have a number of moves = your relevant skill value (shown by the app).</li>
             <li><strong>Clues:</strong> Discard 1 Clue = 1 extra puzzle step. No limit.</li>
-            <li><strong>Close:</strong> Press "Close" to finish. Progress is saved — you can try again next turn.</li>
+            <li><strong>Close:</strong> Press "Close" to finish. Progress is saved – you can try again next turn.</li>
             <li><strong>Darkness:</strong> You CANNOT use Clues for extra puzzle steps in spaces with Darkness.</li>
           </ul>`,
     "rules.gotchas.title": "Important things people forget",
     "rules.gotchas.html": `<ul>
             <li><strong>Darkness:</strong> You CANNOT use Clues to convert Investigation results or for extra puzzle steps in a space with Darkness. Ignored if the space or player has a Light Source, or the space has Fire (or an adjacent space does).</li>
             <li><strong>Barricades:</strong> Block movement through a door/Secret Passage. Remove with an action: Strength test, 2+ successes required.</li>
-            <li><strong>Fire:</strong> Take 1 face-down Damage when you MOVE into a space with Fire. Take an additional 1 face-down Damage when you perform an action (other than Move) in a Fire space. Spreads at the start of each Mythos Phase. <strong>Extinguish:</strong> Use an action, test Agility — for each success, remove Fire from your space or a space you move to later in the round.</li>
+            <li><strong>Fire:</strong> Take 1 face-down Damage when you MOVE into a space with Fire. Take an additional 1 face-down Damage when you perform an action (other than Move) in a Fire space. Spreads at the start of each Mythos Phase. <strong>Extinguish:</strong> Use an action, test Agility – for each success, remove Fire from your space or a space you move to later in the round.</li>
             <li><strong>Secret Passages:</strong> Spaces with a Secret Passage are adjacent to each other. Range does NOT count through them.</li>
             <li><strong>Spells:</strong> Double-sided. You CANNOT look at the back unless an effect flips the card. Flip = resolve the back effect (often negative) and receive a new copy.</li>
             <li><strong>Horror Check (Mythos):</strong> Resolve against the monster within range with the HIGHEST horror rating (blue, bottom right on the front of the token).</li>
-            <li><strong>Health/Sanity are fixed values</strong> — count your face-down Damage/Horror cards to see how close you are.</li>
+            <li><strong>Health/Sanity are fixed values</strong> – count your face-down Damage/Horror cards to see how close you are.</li>
             <li><strong>Range:</strong> Up to 3 spaces. Does NOT count through walls or closed doors, but CAN count through impassable borders.</li>
             <li><strong>Wounded:</strong> When total Damage (face up + face down) >= Health → you become Wounded (Condition), all face-down Damage is discarded. The next time it happens again → eliminated.</li>
             <li><strong>Insane:</strong> When total Horror (face up + face down) >= Sanity → you become Insane (Condition), all face-down Horror is discarded. You receive a secret personal goal (back of the card). The next time it happens again → eliminated.</li>
