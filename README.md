@@ -71,8 +71,6 @@ MoMTools/
 
 Deploy the repo root as a static site. The hub links to both tools under their subfolders.
 
-Previously published separately as [MansionsOfMadnessMastermindSolver](https://github.com/macninja/MansionsOfMadnessMastermindSolver) — now merged here as `code-cipher/`.
-
 ## License
 
 Fan tools, not affiliated with Fantasy Flight Games / Asmodee.
