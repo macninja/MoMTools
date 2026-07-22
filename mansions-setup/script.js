@@ -26,7 +26,7 @@ function prev() { if (currentStep > 0) showStep(currentStep - 1); }
 // Player selection
 function selectPlayers(n) {
   playerCount = n;
-  document.querySelectorAll('.player-btn').forEach(btn => {
+  document.querySelectorAll('.tile[data-n]').forEach(btn => {
     btn.classList.toggle('selected', parseInt(btn.dataset.n) === n);
   });
   document.getElementById('player-info').innerHTML = getPlayerInfo(n);
@@ -65,7 +65,7 @@ function toggleRule(el) {
 function resetWizard() {
   // Reset player selection
   playerCount = 0;
-  document.querySelectorAll('.player-btn').forEach(btn => btn.classList.remove('selected'));
+  document.querySelectorAll('.tile[data-n]').forEach(btn => btn.classList.remove('selected'));
   document.getElementById('player-info').innerHTML = '';
   document.getElementById('next-from-players').disabled = true;
 

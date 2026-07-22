@@ -10,11 +10,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../shared/mom.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../shared/mom.css?v=6">
 </head>
 <body>
   <div class="atmosphere" aria-hidden="true"></div>
+
+  <nav class="hub-nav">
+    <a class="hub-back" href="../index.html">&#8592; MoMTools</a>
+  </nav>
 
   <header class="brand">
     <div class="brand-mark" aria-hidden="true"></div>
@@ -47,11 +50,11 @@
       <h2>Antal spillere</h2>
       <p class="panel-lede">Hvor mange sidder ved bordet i aften?</p>
       <div class="player-grid">
-        <button type="button" class="player-btn" data-n="1" onclick="selectPlayers(1)">1</button>
-        <button type="button" class="player-btn" data-n="2" onclick="selectPlayers(2)">2</button>
-        <button type="button" class="player-btn" data-n="3" onclick="selectPlayers(3)">3</button>
-        <button type="button" class="player-btn" data-n="4" onclick="selectPlayers(4)">4</button>
-        <button type="button" class="player-btn" data-n="5" onclick="selectPlayers(5)">5</button>
+        <button type="button" class="tile" data-n="1" onclick="selectPlayers(1)">1</button>
+        <button type="button" class="tile" data-n="2" onclick="selectPlayers(2)">2</button>
+        <button type="button" class="tile" data-n="3" onclick="selectPlayers(3)">3</button>
+        <button type="button" class="tile" data-n="4" onclick="selectPlayers(4)">4</button>
+        <button type="button" class="tile" data-n="5" onclick="selectPlayers(5)">5</button>
       </div>
       <div id="player-info"></div>
       <div class="btn-row">

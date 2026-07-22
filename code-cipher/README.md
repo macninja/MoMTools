@@ -43,6 +43,10 @@ This project follows [Semantic Versioning 2.0.0](https://semver.org/). The versi
 - **MINOR** — new backward-compatible features
 - **PATCH** — backward-compatible bug fixes
 
+## Styling
+
+Shared with all MoMTools pages via [`shared/mom.css`](../shared/mom.css).
+
 ## Files
 
 | File | Purpose |

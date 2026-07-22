@@ -16,6 +16,10 @@ Open [`index.html`](index.html) in a browser, or jump straight to a tool:
 - [Setup Wizard](mansions-setup/index.html)
 - [Code Cipher](code-cipher/index.html)
 
+## Styling
+
+All pages share one stylesheet: [`shared/mom.css`](shared/mom.css). Change colors, fonts, buttons, and panels there — hub, setup wizard, and Code Cipher all follow.
+
 ## Tests
 
 The Code Cipher solver has self-check tests:

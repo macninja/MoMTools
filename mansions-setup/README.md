@@ -17,12 +17,15 @@ Open `index.html` in any browser. No build step, no dependencies – pure HTML/C
 
 Works great on a phone or tablet propped up at the game table.
 
+## Styling
+
+All visual design lives in one file: [`shared/mom.css`](../shared/mom.css). Edit colors, fonts, and layout there — both tools and the hub page pick it up automatically.
+
 ## Files
 
 ```
 mansions-setup/
 ├── index.html   – wizard structure and content
-├── style.css    – dark Lovecraft-themed styling
 ├── script.js    – navigation, player selection, checklists, accordion
 └── README.md
 ```

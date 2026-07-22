@@ -60,7 +60,7 @@ function renderGuessSlots() {
   currentGuess.forEach((sym, idx) => {
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "slot";
+    btn.className = "tile";
     btn.style.background = symbolColor(sym);
     btn.textContent = symbolLabel(sym);
     btn.title = `Slot ${idx + 1} — tap to cycle`;
